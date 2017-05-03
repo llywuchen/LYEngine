@@ -1,0 +1,16 @@
+//
+//  LYEngineDemo.pch
+//  LYEngine
+//
+//  Created by lly on 2017/3/27.
+//  Copyright © 2017年 franklin. All rights reserved.
+//
+
+#ifndef LYEngineDemo_pch
+#define LYEngineDemo_pch
+
+#import <LYEngine/LYEngine.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* LYEngineDemo_pch */
