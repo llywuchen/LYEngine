@@ -3,9 +3,13 @@
 ###items
 * MVVM base
 
+* UI logic
+
+* UI style
+
 * DataBinding
 
-* UI logic
+* router
 
 * webService
 

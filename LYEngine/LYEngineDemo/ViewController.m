@@ -152,7 +152,7 @@
     if(!cell){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
-    id<LYVDataProtocol> obj = self.listViewModel.VD_list[indexPath.row];
+    LYTViewData *obj = self.listViewModel.VD_list[indexPath.row];
     cell.textLabel.text = obj.VD_name;
     cell.detailTextLabel.text = obj.VD_nick;
     return cell;

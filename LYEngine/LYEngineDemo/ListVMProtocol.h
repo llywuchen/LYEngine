@@ -7,19 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ViewModelProtocol.h"
 #import "LYMutableArray.h"
+#import "LYTViewData.h"
 
-@protocol LYVDataProtocol <NSObject>
+@protocol ListVMProtocol <LYViewDataProtocol>
 
-VDPropretyCopy(NSString *, name);
-VDPropretyCopy(NSString *, nick);
-
-@end
-
-@protocol ListVMProtocol <NSObject>
-
-VDPropretyStrong(LYMutableArray<LYVDataProtocol> *, list);
+VDPropretyStrong(NSMutableArray<LYTViewData *> *, list);
 
 VDMethod(void, refresh);
 

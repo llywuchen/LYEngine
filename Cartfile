@@ -1,2 +1,4 @@
 github "https://github.com/ReactiveCocoa/ReactiveObjC.git" "master"
 github "https://github.com/SnapKit/Masonry.git" "master"
+github "https://github.com/ibireme/YYModel.git" "master"
+github "realm/realm-cocoa"

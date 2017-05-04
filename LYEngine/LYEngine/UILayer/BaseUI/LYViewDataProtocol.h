@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol LYVMProtocol <NSObject>
+@protocol LYViewDataProtocol <NSObject>
 
 @end

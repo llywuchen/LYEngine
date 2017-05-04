@@ -11,6 +11,6 @@
 
 @interface ListViewModel : LYViewModel <ListVMProtocol>
 
-VMPropretyStrong(LYMutableArray<LYVDataProtocol> *, list);
+VMPropretyStrong(NSMutableArray<LYTViewData *> *, list);
 
 @end

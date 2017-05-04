@@ -13,6 +13,9 @@
 #import "UIView+UIViewController.h"
 #import "UIView+LYViewModel.h"
 
+#import "LYViewDataProtocol.h"
+#import "LYViewData.h"
+
 #import <Masonry/Masonry.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 

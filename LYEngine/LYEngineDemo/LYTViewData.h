@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ListVMProtocol.h"
 
-@interface LYViewData : NSObject <LYVDataProtocol>
+@interface LYTViewData : LYViewData
 
 VDPropretyCopy(NSString *, name);
 VDPropretyCopy(NSString *, nick);
 
 + (instancetype)instanceWithName:(NSString *)name nick:(NSString *)nick;
-+ (NSMutableArray *)test:(NSInteger) count;
++ (NSMutableArray<LYTViewData *> *)test:(NSInteger) count;
 
 @end

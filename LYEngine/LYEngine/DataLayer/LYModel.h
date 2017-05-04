@@ -6,11 +6,11 @@
 //  Copyright © 2016年 lly. All rights reserved.
 //
 //#import <LYWebService/LYDictionryConvertable.h>
-//#import <YYModel/YYModel.h>
-//#import <Realm/Realm.h>
+#import <Realm/Realm.h>
 #import <UIKit/UIKit.h>
+#import "LYDictionryConvertable.h"
 
-@interface LYModel : NSObject//: RLMObject <LYDictionryConvertable>
+@interface LYModel : RLMObject <LYDictionryConvertable>
 
 
 @end
