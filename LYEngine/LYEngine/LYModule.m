@@ -10,8 +10,16 @@
 
 @implementation LYModule
 
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        [self.class registerRouter];
+    }
+    return self;
+}
+
 + (void)registerRouter{
-    
+    //
 }
 
 @end
