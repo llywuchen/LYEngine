@@ -28,6 +28,16 @@
 		0A2AB9F81EBB208300AFC455 /* LYModel+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB9F61EBB208300AFC455 /* LYModel+Cache.m */; };
 		0A2AB9FB1EBB2AE800AFC455 /* NSArray+Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9F91EBB2AE800AFC455 /* NSArray+Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2AB9FC1EBB2AE800AFC455 /* NSArray+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB9FA1EBB2AE800AFC455 /* NSArray+Cache.m */; };
+		0A2ABA031EBC260900AFC455 /* MGJRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA011EBC260900AFC455 /* MGJRouter.h */; };
+		0A2ABA041EBC260900AFC455 /* MGJRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA021EBC260900AFC455 /* MGJRouter.m */; };
+		0A2ABA071EBC263A00AFC455 /* LYModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA051EBC263A00AFC455 /* LYModule.h */; };
+		0A2ABA081EBC263A00AFC455 /* LYModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA061EBC263A00AFC455 /* LYModule.m */; };
+		0A2ABA0B1EBC4F3B00AFC455 /* LYURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA091EBC4F3B00AFC455 /* LYURLProtocol.h */; };
+		0A2ABA0C1EBC4F3B00AFC455 /* LYURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA0A1EBC4F3B00AFC455 /* LYURLProtocol.m */; };
+		0A2ABA0F1EBC554B00AFC455 /* LYURLProtocolResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA0D1EBC554B00AFC455 /* LYURLProtocolResponse.h */; };
+		0A2ABA101EBC554B00AFC455 /* LYURLProtocolResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA0E1EBC554B00AFC455 /* LYURLProtocolResponse.m */; };
+		0A2ABA131EBC610800AFC455 /* NSDictionary+JsonString.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA111EBC610800AFC455 /* NSDictionary+JsonString.h */; };
+		0A2ABA141EBC610800AFC455 /* NSDictionary+JsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA121EBC610800AFC455 /* NSDictionary+JsonString.m */; };
 		0A92D9C61E88C08A00E72CEC /* LYEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9C41E88C08A00E72CEC /* LYEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A92DA061E88C4D300E72CEC /* LYAssertionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9F61E88C4D300E72CEC /* LYAssertionHandler.h */; };
 		0A92DA071E88C4D300E72CEC /* LYAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A92D9F71E88C4D300E72CEC /* LYAssertionHandler.m */; };
@@ -90,6 +100,16 @@
 		0A2AB9F61EBB208300AFC455 /* LYModel+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LYModel+Cache.m"; sourceTree = "<group>"; };
 		0A2AB9F91EBB2AE800AFC455 /* NSArray+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Cache.h"; sourceTree = "<group>"; };
 		0A2AB9FA1EBB2AE800AFC455 /* NSArray+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Cache.m"; sourceTree = "<group>"; };
+		0A2ABA011EBC260900AFC455 /* MGJRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGJRouter.h; sourceTree = "<group>"; };
+		0A2ABA021EBC260900AFC455 /* MGJRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGJRouter.m; sourceTree = "<group>"; };
+		0A2ABA051EBC263A00AFC455 /* LYModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYModule.h; sourceTree = "<group>"; };
+		0A2ABA061EBC263A00AFC455 /* LYModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYModule.m; sourceTree = "<group>"; };
+		0A2ABA091EBC4F3B00AFC455 /* LYURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYURLProtocol.h; sourceTree = "<group>"; };
+		0A2ABA0A1EBC4F3B00AFC455 /* LYURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYURLProtocol.m; sourceTree = "<group>"; };
+		0A2ABA0D1EBC554B00AFC455 /* LYURLProtocolResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYURLProtocolResponse.h; sourceTree = "<group>"; };
+		0A2ABA0E1EBC554B00AFC455 /* LYURLProtocolResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYURLProtocolResponse.m; sourceTree = "<group>"; };
+		0A2ABA111EBC610800AFC455 /* NSDictionary+JsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JsonString.h"; sourceTree = "<group>"; };
+		0A2ABA121EBC610800AFC455 /* NSDictionary+JsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JsonString.m"; sourceTree = "<group>"; };
 		0A92D9C11E88C08A00E72CEC /* LYEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A92D9C41E88C08A00E72CEC /* LYEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYEngine.h; sourceTree = "<group>"; };
 		0A92D9C51E88C08A00E72CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +225,8 @@
 				0A92D9C51E88C08A00E72CEC /* Info.plist */,
 				0AF33BAE1E88F590001311C3 /* LYDefines.h */,
 				0AF6FBAA1EB319E8004961D6 /* LYEngine.pch */,
+				0A2ABA051EBC263A00AFC455 /* LYModule.h */,
+				0A2ABA061EBC263A00AFC455 /* LYModule.m */,
 			);
 			path = LYEngine;
 			sourceTree = "<group>";
@@ -312,6 +334,8 @@
 		0AF6FB8D1EB2EDF0004961D6 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				0A2ABA011EBC260900AFC455 /* MGJRouter.h */,
+				0A2ABA021EBC260900AFC455 /* MGJRouter.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -319,6 +343,10 @@
 		0AF6FB8E1EB2EDF0004961D6 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				0A2ABA091EBC4F3B00AFC455 /* LYURLProtocol.h */,
+				0A2ABA0A1EBC4F3B00AFC455 /* LYURLProtocol.m */,
+				0A2ABA0D1EBC554B00AFC455 /* LYURLProtocolResponse.h */,
+				0A2ABA0E1EBC554B00AFC455 /* LYURLProtocolResponse.m */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -352,6 +380,8 @@
 				0A2AB9BA1EB9694C00AFC455 /* LYMutableArray.m */,
 				0AF6FBAD1EB31F8A004961D6 /* NSObject+Extension.h */,
 				0AF6FBAE1EB31F8A004961D6 /* NSObject+Extension.m */,
+				0A2ABA111EBC610800AFC455 /* NSDictionary+JsonString.h */,
+				0A2ABA121EBC610800AFC455 /* NSDictionary+JsonString.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -363,16 +393,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2ABA031EBC260900AFC455 /* MGJRouter.h in Headers */,
+				0A2ABA0B1EBC4F3B00AFC455 /* LYURLProtocol.h in Headers */,
 				0A92D9C61E88C08A00E72CEC /* LYEngine.h in Headers */,
 				0AF6FBA31EB2F254004961D6 /* UIView+LYViewModel.h in Headers */,
+				0A2ABA071EBC263A00AFC455 /* LYModule.h in Headers */,
 				0AF6FB741EB2EAA3004961D6 /* LYViewModel.h in Headers */,
 				0AF6FBA71EB2F254004961D6 /* UIViewController+LYViewModel.h in Headers */,
 				0A2AB9EC1EBB15D400AFC455 /* LYViewData.h in Headers */,
+				0A2ABA0F1EBC554B00AFC455 /* LYURLProtocolResponse.h in Headers */,
 				0AF6FBA51EB2F254004961D6 /* UIView+UIViewController.h in Headers */,
 				0A2AB9E91EBB15AC00AFC455 /* LYViewDataProtocol.h in Headers */,
 				0AF33BAF1E88F605001311C3 /* LYDefines.h in Headers */,
 				0A2AB9F11EBB1C7600AFC455 /* LYModel.h in Headers */,
 				0A2AB9F71EBB208300AFC455 /* LYModel+Cache.h in Headers */,
+				0A2ABA131EBC610800AFC455 /* NSDictionary+JsonString.h in Headers */,
 				0A2AB9FB1EBB2AE800AFC455 /* NSArray+Cache.h in Headers */,
 				0A2AB9CC1EB96D2300AFC455 /* LYUILayer.h in Headers */,
 				0A2AB9CD1EB96D2300AFC455 /* LYBusinessLayer.h in Headers */,
@@ -510,12 +545,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF6FBA41EB2F254004961D6 /* UIView+LYViewModel.m in Sources */,
+				0A2ABA041EBC260900AFC455 /* MGJRouter.m in Sources */,
 				0A92DA0B1E88C4D300E72CEC /* NSObject+LYLock.m in Sources */,
 				0A2AB9ED1EBB15D400AFC455 /* LYViewData.m in Sources */,
 				0AF6FBB01EB31F8A004961D6 /* NSObject+Extension.m in Sources */,
 				0A2AB9F21EBB1C7600AFC455 /* LYModel.m in Sources */,
+				0A2ABA0C1EBC4F3B00AFC455 /* LYURLProtocol.m in Sources */,
 				0AF6FB711EB2EAA3004961D6 /* LYUseCase.m in Sources */,
+				0A2ABA141EBC610800AFC455 /* NSDictionary+JsonString.m in Sources */,
 				0AF6FBA81EB2F254004961D6 /* UIViewController+LYViewModel.m in Sources */,
+				0A2ABA081EBC263A00AFC455 /* LYModule.m in Sources */,
 				0AF6FB751EB2EAA3004961D6 /* LYViewModel.m in Sources */,
 				0AF6FBA61EB2F254004961D6 /* UIView+UIViewController.m in Sources */,
 				0A2AB9FC1EBB2AE800AFC455 /* NSArray+Cache.m in Sources */,
@@ -525,6 +564,7 @@
 				0A92DA071E88C4D300E72CEC /* LYAssertionHandler.m in Sources */,
 				0A2AB9F81EBB208300AFC455 /* LYModel+Cache.m in Sources */,
 				0A2AB9BE1EB9694C00AFC455 /* LYMutableArray.m in Sources */,
+				0A2ABA101EBC554B00AFC455 /* LYURLProtocolResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
