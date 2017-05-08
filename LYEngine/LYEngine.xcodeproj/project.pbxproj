@@ -23,23 +23,28 @@
 		0A2AB9ED1EBB15D400AFC455 /* LYViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB9EB1EBB15D400AFC455 /* LYViewData.m */; };
 		0A2AB9F11EBB1C7600AFC455 /* LYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9EF1EBB1C7600AFC455 /* LYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2AB9F21EBB1C7600AFC455 /* LYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB9F01EBB1C7600AFC455 /* LYModel.m */; };
-		0A2AB9F41EBB1F9C00AFC455 /* LYDictionryConvertable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9F31EBB1F9C00AFC455 /* LYDictionryConvertable.h */; };
+		0A2AB9F41EBB1F9C00AFC455 /* LYDictionryConvertable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9F31EBB1F9C00AFC455 /* LYDictionryConvertable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2AB9F71EBB208300AFC455 /* LYModel+Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9F51EBB208300AFC455 /* LYModel+Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2AB9F81EBB208300AFC455 /* LYModel+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB9F61EBB208300AFC455 /* LYModel+Cache.m */; };
 		0A2AB9FB1EBB2AE800AFC455 /* NSArray+Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9F91EBB2AE800AFC455 /* NSArray+Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2AB9FC1EBB2AE800AFC455 /* NSArray+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB9FA1EBB2AE800AFC455 /* NSArray+Cache.m */; };
-		0A2ABA031EBC260900AFC455 /* MGJRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA011EBC260900AFC455 /* MGJRouter.h */; };
+		0A2ABA031EBC260900AFC455 /* MGJRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA011EBC260900AFC455 /* MGJRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2ABA041EBC260900AFC455 /* MGJRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA021EBC260900AFC455 /* MGJRouter.m */; };
-		0A2ABA071EBC263A00AFC455 /* LYModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA051EBC263A00AFC455 /* LYModule.h */; };
+		0A2ABA071EBC263A00AFC455 /* LYModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA051EBC263A00AFC455 /* LYModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2ABA081EBC263A00AFC455 /* LYModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA061EBC263A00AFC455 /* LYModule.m */; };
-		0A2ABA0B1EBC4F3B00AFC455 /* LYURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA091EBC4F3B00AFC455 /* LYURLProtocol.h */; };
+		0A2ABA0B1EBC4F3B00AFC455 /* LYURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA091EBC4F3B00AFC455 /* LYURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2ABA0C1EBC4F3B00AFC455 /* LYURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA0A1EBC4F3B00AFC455 /* LYURLProtocol.m */; };
-		0A2ABA0F1EBC554B00AFC455 /* LYURLProtocolResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA0D1EBC554B00AFC455 /* LYURLProtocolResponse.h */; };
+		0A2ABA0F1EBC554B00AFC455 /* LYURLProtocolResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA0D1EBC554B00AFC455 /* LYURLProtocolResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2ABA101EBC554B00AFC455 /* LYURLProtocolResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA0E1EBC554B00AFC455 /* LYURLProtocolResponse.m */; };
-		0A2ABA131EBC610800AFC455 /* NSDictionary+JsonString.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA111EBC610800AFC455 /* NSDictionary+JsonString.h */; };
+		0A2ABA131EBC610800AFC455 /* NSDictionary+JsonString.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA111EBC610800AFC455 /* NSDictionary+JsonString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2ABA141EBC610800AFC455 /* NSDictionary+JsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA121EBC610800AFC455 /* NSDictionary+JsonString.m */; };
+		0A2ABA171EC0129B00AFC455 /* MainModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA161EC0129B00AFC455 /* MainModule.m */; };
+		0A2ABA181EC03DC500AFC455 /* LYDataLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2AB9EE1EBB1C1C00AFC455 /* LYDataLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A2ABA1A1EC043A500AFC455 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2ABA191EC043A500AFC455 /* Realm.framework */; };
+		0A2ABA1D1EC0445B00AFC455 /* LYViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA1B1EC0445B00AFC455 /* LYViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A2ABA1E1EC0445B00AFC455 /* LYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA1C1EC0445B00AFC455 /* LYViewController.m */; };
 		0A92D9C61E88C08A00E72CEC /* LYEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9C41E88C08A00E72CEC /* LYEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A92DA061E88C4D300E72CEC /* LYAssertionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9F61E88C4D300E72CEC /* LYAssertionHandler.h */; };
+		0A92DA061E88C4D300E72CEC /* LYAssertionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9F61E88C4D300E72CEC /* LYAssertionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A92DA071E88C4D300E72CEC /* LYAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A92D9F71E88C4D300E72CEC /* LYAssertionHandler.m */; };
 		0A92DA081E88C4D300E72CEC /* LYWeakMutableArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9F81E88C4D300E72CEC /* LYWeakMutableArray.h */; };
 		0A92DA091E88C4D300E72CEC /* LYWeakMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A92D9F91E88C4D300E72CEC /* LYWeakMutableArray.m */; };
@@ -110,6 +115,11 @@
 		0A2ABA0E1EBC554B00AFC455 /* LYURLProtocolResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYURLProtocolResponse.m; sourceTree = "<group>"; };
 		0A2ABA111EBC610800AFC455 /* NSDictionary+JsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JsonString.h"; sourceTree = "<group>"; };
 		0A2ABA121EBC610800AFC455 /* NSDictionary+JsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JsonString.m"; sourceTree = "<group>"; };
+		0A2ABA151EC0129B00AFC455 /* MainModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModule.h; sourceTree = "<group>"; };
+		0A2ABA161EC0129B00AFC455 /* MainModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModule.m; sourceTree = "<group>"; };
+		0A2ABA191EC043A500AFC455 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		0A2ABA1B1EC0445B00AFC455 /* LYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYViewController.h; sourceTree = "<group>"; };
+		0A2ABA1C1EC0445B00AFC455 /* LYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYViewController.m; sourceTree = "<group>"; };
 		0A92D9C11E88C08A00E72CEC /* LYEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A92D9C41E88C08A00E72CEC /* LYEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYEngine.h; sourceTree = "<group>"; };
 		0A92D9C51E88C08A00E72CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2ABA1A1EC043A500AFC455 /* Realm.framework in Frameworks */,
 				0A2AB9DD1EB9801600AFC455 /* Masonry.framework in Frameworks */,
 				0A2AB9DE1EB9801600AFC455 /* ReactiveObjC.framework in Frameworks */,
 			);
@@ -172,6 +183,7 @@
 		0A2AB9CF1EB96EA900AFC455 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A2ABA191EC043A500AFC455 /* Realm.framework */,
 				0A2AB9D01EB96EA900AFC455 /* Masonry.framework */,
 				0A2AB9D11EB96EA900AFC455 /* ReactiveObjC.framework */,
 			);
@@ -185,6 +197,49 @@
 				0A2AB9DC1EB9801600AFC455 /* ReactiveObjC.framework */,
 			);
 			path = ThirdFrameWork;
+			sourceTree = "<group>";
+		};
+		0A2ABA1F1EC0455D00AFC455 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				0A2ABA151EC0129B00AFC455 /* MainModule.h */,
+				0A2ABA161EC0129B00AFC455 /* MainModule.m */,
+				0A2ABA221EC0459800AFC455 /* Model */,
+				0A2ABA211EC0458A00AFC455 /* ViewModel */,
+				0A2ABA201EC0458400AFC455 /* View */,
+			);
+			name = MainModule;
+			sourceTree = "<group>";
+		};
+		0A2ABA201EC0458400AFC455 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A2AB9C11EB969A200AFC455 /* ListVMProtocol.h */,
+				0A2AB9C21EB969A200AFC455 /* LYTViewData.h */,
+				0A2AB9C31EB969A200AFC455 /* LYTViewData.m */,
+				0A2AB9C61EB969A200AFC455 /* ViewModelProtocol.h */,
+				0AF33B9A1E88EA92001311C3 /* ViewController.h */,
+				0AF33B9B1E88EA92001311C3 /* ViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0A2ABA211EC0458A00AFC455 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A2AB9BF1EB969A200AFC455 /* ListViewModel.h */,
+				0A2AB9C01EB969A200AFC455 /* ListViewModel.m */,
+				0A2AB9C41EB969A200AFC455 /* ViewModel.h */,
+				0A2AB9C51EB969A200AFC455 /* ViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A2ABA221EC0459800AFC455 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		0A92D9B71E88C08A00E72CEC = {
@@ -234,18 +289,9 @@
 		0AF33B931E88EA92001311C3 /* LYEngineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0A2AB9BF1EB969A200AFC455 /* ListViewModel.h */,
-				0A2AB9C01EB969A200AFC455 /* ListViewModel.m */,
-				0A2AB9C11EB969A200AFC455 /* ListVMProtocol.h */,
-				0A2AB9C21EB969A200AFC455 /* LYTViewData.h */,
-				0A2AB9C31EB969A200AFC455 /* LYTViewData.m */,
-				0A2AB9C41EB969A200AFC455 /* ViewModel.h */,
-				0A2AB9C51EB969A200AFC455 /* ViewModel.m */,
-				0A2AB9C61EB969A200AFC455 /* ViewModelProtocol.h */,
+				0A2ABA1F1EC0455D00AFC455 /* MainModule */,
 				0AF33B971E88EA92001311C3 /* AppDelegate.h */,
 				0AF33B981E88EA92001311C3 /* AppDelegate.m */,
-				0AF33B9A1E88EA92001311C3 /* ViewController.h */,
-				0AF33B9B1E88EA92001311C3 /* ViewController.m */,
 				0AF33B9D1E88EA92001311C3 /* Main.storyboard */,
 				0AF33BA01E88EA92001311C3 /* Assets.xcassets */,
 				0AF33BA21E88EA92001311C3 /* LaunchScreen.storyboard */,
@@ -316,6 +362,8 @@
 				0A2AB9E81EBB15AC00AFC455 /* LYViewDataProtocol.h */,
 				0A2AB9EA1EBB15D400AFC455 /* LYViewData.h */,
 				0A2AB9EB1EBB15D400AFC455 /* LYViewData.m */,
+				0A2ABA1B1EC0445B00AFC455 /* LYViewController.h */,
+				0A2ABA1C1EC0445B00AFC455 /* LYViewController.m */,
 			);
 			path = BaseUI;
 			sourceTree = "<group>";
@@ -393,23 +441,27 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2ABA031EBC260900AFC455 /* MGJRouter.h in Headers */,
-				0A2ABA0B1EBC4F3B00AFC455 /* LYURLProtocol.h in Headers */,
 				0A92D9C61E88C08A00E72CEC /* LYEngine.h in Headers */,
 				0AF6FBA31EB2F254004961D6 /* UIView+LYViewModel.h in Headers */,
-				0A2ABA071EBC263A00AFC455 /* LYModule.h in Headers */,
 				0AF6FB741EB2EAA3004961D6 /* LYViewModel.h in Headers */,
 				0AF6FBA71EB2F254004961D6 /* UIViewController+LYViewModel.h in Headers */,
 				0A2AB9EC1EBB15D400AFC455 /* LYViewData.h in Headers */,
-				0A2ABA0F1EBC554B00AFC455 /* LYURLProtocolResponse.h in Headers */,
 				0AF6FBA51EB2F254004961D6 /* UIView+UIViewController.h in Headers */,
 				0A2AB9E91EBB15AC00AFC455 /* LYViewDataProtocol.h in Headers */,
 				0AF33BAF1E88F605001311C3 /* LYDefines.h in Headers */,
+				0A2ABA0B1EBC4F3B00AFC455 /* LYURLProtocol.h in Headers */,
+				0A2ABA071EBC263A00AFC455 /* LYModule.h in Headers */,
+				0A2ABA0F1EBC554B00AFC455 /* LYURLProtocolResponse.h in Headers */,
+				0A2ABA131EBC610800AFC455 /* NSDictionary+JsonString.h in Headers */,
 				0A2AB9F11EBB1C7600AFC455 /* LYModel.h in Headers */,
 				0A2AB9F71EBB208300AFC455 /* LYModel+Cache.h in Headers */,
-				0A2ABA131EBC610800AFC455 /* NSDictionary+JsonString.h in Headers */,
 				0A2AB9FB1EBB2AE800AFC455 /* NSArray+Cache.h in Headers */,
+				0A2ABA181EC03DC500AFC455 /* LYDataLayer.h in Headers */,
+				0A92DA061E88C4D300E72CEC /* LYAssertionHandler.h in Headers */,
+				0A2AB9F41EBB1F9C00AFC455 /* LYDictionryConvertable.h in Headers */,
+				0A2ABA031EBC260900AFC455 /* MGJRouter.h in Headers */,
 				0A2AB9CC1EB96D2300AFC455 /* LYUILayer.h in Headers */,
+				0A2ABA1D1EC0445B00AFC455 /* LYViewController.h in Headers */,
 				0A2AB9CD1EB96D2300AFC455 /* LYBusinessLayer.h in Headers */,
 				0A92DA081E88C4D300E72CEC /* LYWeakMutableArray.h in Headers */,
 				0AF6FB701EB2EAA3004961D6 /* LYUseCase.h in Headers */,
@@ -419,8 +471,6 @@
 				0A2AB9BB1EB9694C00AFC455 /* LYArray.h in Headers */,
 				0A92DA0A1E88C4D300E72CEC /* NSObject+LYLock.h in Headers */,
 				0AF6FBAF1EB31F8A004961D6 /* NSObject+Extension.h in Headers */,
-				0A2AB9F41EBB1F9C00AFC455 /* LYDictionryConvertable.h in Headers */,
-				0A92DA061E88C4D300E72CEC /* LYAssertionHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +580,7 @@
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/Masonry.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/ReactiveObjC.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Realm.framework",
 			);
 			outputPaths = (
 			);
@@ -565,6 +616,7 @@
 				0A2AB9F81EBB208300AFC455 /* LYModel+Cache.m in Sources */,
 				0A2AB9BE1EB9694C00AFC455 /* LYMutableArray.m in Sources */,
 				0A2ABA101EBC554B00AFC455 /* LYURLProtocolResponse.m in Sources */,
+				0A2ABA1E1EC0445B00AFC455 /* LYViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +630,7 @@
 				0A2AB9C71EB969A200AFC455 /* ListViewModel.m in Sources */,
 				0AF33B961E88EA92001311C3 /* main.m in Sources */,
 				0A2AB9C81EB969A200AFC455 /* LYTViewData.m in Sources */,
+				0A2ABA171EC0129B00AFC455 /* MainModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,11 +6,23 @@
 //  Copyright © 2017年 franklin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MGJRouter.h"
 
-@interface LYModule : NSObject
+@interface LYModule : MGJRouter
 
-+ (void)registerRouter;
++ (instancetype)sharedInstance;
+
++ (void)install;
++ (void)unInstall;
++ (BOOL)isInstalled;
+
+- (void)initRouter;
+- (void)unInitRouter;
+
+- (void)onModuleInstlled;
+
+- (void)onModuleUninstalled;
+
+
 
 @end

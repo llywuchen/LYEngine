@@ -12,6 +12,6 @@
 #import "LYModel.h"
 #import "LYDictionryConvertable.h"
 #import "LYModel+Cache.h"
-#import "NSArry+Cache.h"
+#import "NSArray+Cache.h"
 
 #endif /* LYDataLayer_h */

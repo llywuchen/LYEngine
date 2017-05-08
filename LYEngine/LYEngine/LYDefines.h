@@ -9,6 +9,8 @@
 #ifndef LYDefines_h
 #define LYDefines_h
 
+#import "LYAssertionHandler.h"
+
 #define VDPropretyStrong(Type,Name) @property(nonatomic,strong) Type VD_##Name;
 #define VDPropretyCopy(Type,Name) @property(nonatomic,copy) Type VD_##Name;
 #define VDPropretyAssign(Type,Name) @property(nonatomic,assign) Type VD_##Name;

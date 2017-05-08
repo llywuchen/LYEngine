@@ -12,6 +12,7 @@
 #import "UIViewController+LYViewModel.h"
 #import "UIView+UIViewController.h"
 #import "UIView+LYViewModel.h"
+#import "LYViewController.h"
 
 #import "LYViewDataProtocol.h"
 #import "LYViewData.h"
