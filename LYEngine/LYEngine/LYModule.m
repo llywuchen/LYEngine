@@ -8,7 +8,9 @@
 
 #import "LYModule.h"
 #import "LYDefines.h"
+#import "NSObject+LYLock.h"
 
+static NSMutableDictionary *_moduleDic;
 @interface LYModule(){
     
 }
@@ -18,30 +20,41 @@
 
 @implementation LYModule
 
++ (void)load{
+    if(self==LYModule.class){
+        _moduleDic = [NSMutableDictionary dictionary];
+    }
+}
+
 + (instancetype)sharedInstance
 {
-    static LYModule *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
-    });
-    return instance;
+    [_moduleDic ly_lockObject];
+    LYModule *moudule = [_moduleDic objectForKey:NSStringFromClass(self.class)];
+    [_moduleDic ly_unlockObject];
+    return moudule;
 }
 
 - (void)onModuleInstlled{
+    NSLog(@"Module : %@ installed!",NSStringFromClass(self.class));
     [self initRouter];
 }
 
 - (void)onModuleUninstalled{
+    NSLog(@"Module : %@ unInstalled!",NSStringFromClass(self.class));
     [self unInitRouter];
 }
 
 #pragma mark - register
 + (void)install{
     LYModule * m = [self sharedInstance];
-    if(m.isOnload){
-        LYAssert(true, @"the Module:%@ has Registered !",NSStringFromClass(m.class));
+    if(m){
+        LYAssert(false, @"the Module:%@ has Registered !",NSStringFromClass(m.class));
     }else{
+        m = [[self alloc]init];
+        [_moduleDic ly_lockObject];
+        [_moduleDic setObject:m forKey:NSStringFromClass(self.class)];
+        [_moduleDic ly_unlockObject];
+        
         m.isOnload = YES;
         [m onModuleInstlled];
     }
@@ -49,11 +62,15 @@
 
 + (void)unInstall{
     LYModule * m = [self sharedInstance];
-    if(!m.isOnload){
-        LYAssert(true, @"the Module:%@ has Unregistered !",NSStringFromClass(m.class));
+    if(!m){
+        LYAssert(false, @"the Module:%@ has Unregistered !",NSStringFromClass(m.class));
     }else{
         m.isOnload = NO;
         [m onModuleUninstalled];
+        [_moduleDic ly_lockObject];
+        [_moduleDic removeObjectForKey:NSStringFromClass(self.class)];
+        [_moduleDic ly_unlockObject];
+        m = nil;
     }
 }
 

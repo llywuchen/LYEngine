@@ -21,7 +21,7 @@
 
 - (void)initRouter{
     [super initRouter];
-    [MGJRouter registerURLPattern:MainVC toObjectHandler:^id(NSDictionary *routerParameters) {
+    [self.class registerURLPattern:MainVC toObjectHandler:^id(NSDictionary *routerParameters) {
         ViewController *v = [[ViewController alloc]init];
         return v;
     }];

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainModule.h"
+#import "MineModule.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +21,17 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [MainModule install];
+    [MineModule install];
+    
+    NSLog(@"%p--%p",[MainModule sharedInstance],[MineModule sharedInstance]);
+    
     UIViewController *v = [MainModule objectForURL:MainVC];
     self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:v];
     [self.window makeKeyWindow];
     [self.window makeKeyAndVisible];
+    
+    [MainModule unInstall];
+    [MineModule unInstall];
     return YES;
 }
 

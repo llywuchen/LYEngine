@@ -128,7 +128,7 @@ NSString *const MGJRouterParameterUserInfo = @"MGJRouterParameterUserInfo";
 
 + (id)objectForURL:(NSString *)URL withUserInfo:(NSDictionary *)userInfo
 {
-    MGJRouter *router = [MGJRouter sharedInstance];
+    MGJRouter *router = [self sharedInstance];
     
     URL = [URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableDictionary *parameters = [router extractParametersFromURL:URL];

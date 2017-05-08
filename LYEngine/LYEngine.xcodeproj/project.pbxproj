@@ -43,6 +43,7 @@
 		0A2ABA1A1EC043A500AFC455 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2ABA191EC043A500AFC455 /* Realm.framework */; };
 		0A2ABA1D1EC0445B00AFC455 /* LYViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2ABA1B1EC0445B00AFC455 /* LYViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2ABA1E1EC0445B00AFC455 /* LYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA1C1EC0445B00AFC455 /* LYViewController.m */; };
+		0A2ABA2A1EC0509000AFC455 /* MineModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ABA291EC0509000AFC455 /* MineModule.m */; };
 		0A92D9C61E88C08A00E72CEC /* LYEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9C41E88C08A00E72CEC /* LYEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A92DA061E88C4D300E72CEC /* LYAssertionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A92D9F61E88C4D300E72CEC /* LYAssertionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A92DA071E88C4D300E72CEC /* LYAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A92D9F71E88C4D300E72CEC /* LYAssertionHandler.m */; };
@@ -120,6 +121,8 @@
 		0A2ABA191EC043A500AFC455 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0A2ABA1B1EC0445B00AFC455 /* LYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYViewController.h; sourceTree = "<group>"; };
 		0A2ABA1C1EC0445B00AFC455 /* LYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYViewController.m; sourceTree = "<group>"; };
+		0A2ABA281EC0509000AFC455 /* MineModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineModule.h; sourceTree = "<group>"; };
+		0A2ABA291EC0509000AFC455 /* MineModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineModule.m; sourceTree = "<group>"; };
 		0A92D9C11E88C08A00E72CEC /* LYEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A92D9C41E88C08A00E72CEC /* LYEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYEngine.h; sourceTree = "<group>"; };
 		0A92D9C51E88C08A00E72CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -242,6 +245,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		0A2ABA271EC0506900AFC455 /* MineModule */ = {
+			isa = PBXGroup;
+			children = (
+				0A2ABA281EC0509000AFC455 /* MineModule.h */,
+				0A2ABA291EC0509000AFC455 /* MineModule.m */,
+			);
+			name = MineModule;
+			sourceTree = "<group>";
+		};
 		0A92D9B71E88C08A00E72CEC = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +301,7 @@
 		0AF33B931E88EA92001311C3 /* LYEngineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0A2ABA271EC0506900AFC455 /* MineModule */,
 				0A2ABA1F1EC0455D00AFC455 /* MainModule */,
 				0AF33B971E88EA92001311C3 /* AppDelegate.h */,
 				0AF33B981E88EA92001311C3 /* AppDelegate.m */,
@@ -630,6 +643,7 @@
 				0A2AB9C71EB969A200AFC455 /* ListViewModel.m in Sources */,
 				0AF33B961E88EA92001311C3 /* main.m in Sources */,
 				0A2AB9C81EB969A200AFC455 /* LYTViewData.m in Sources */,
+				0A2ABA2A1EC0509000AFC455 /* MineModule.m in Sources */,
 				0A2ABA171EC0129B00AFC455 /* MainModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
