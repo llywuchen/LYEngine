@@ -11,7 +11,6 @@
 #import "ViewModelProtocol.h"
 #import "ListVMProtocol.h"
 
-
 //#define ViewControllerReadly
 
 #ifdef ViewControllerReadly

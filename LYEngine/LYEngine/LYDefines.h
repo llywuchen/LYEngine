@@ -51,7 +51,7 @@ _##VMproperty = p; \
 
 #define LYSynthesizeViewModelUnReadly(ViewModelProtocolClass,...) \
 - (NSObject<ViewModelProtocolClass> *)viewModel{\
-_viewModel = nil;\
+_viewModel = (NSObject<ViewModelProtocolClass> *)[LYViewModel new];\
 return _viewModel;\
 }
 
@@ -67,7 +67,7 @@ return _##ViewModel;\
 
 #define LYSynthesizeSubViewModelRegisterAndUnReadly(RegiterView,ViewModel,ViewModelProtocolClass,...) \
 - (NSObject<ViewModelProtocolClass> *)ViewModel{\
-_##ViewModel = nil;\
+_##ViewModel = (NSObject<ViewModelProtocolClass> *)[LYViewModel new];\
 return _##ViewModel;\
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "LYViewModel.h"
+#import "LYViewData.h"
 #import "LYModel.h"
 #import "LYDefines.h"
 #import "UIView+UIViewController.h"
@@ -97,18 +98,58 @@
     
 }
 
-- (void)doesNotRecognizeSelector:(SEL)aSelector{
+- (void)forwardInvocation:(NSInvocation *)anInvocation{
 #if DEBUG
-    NSString *sel = NSStringFromSelector(aSelector);
+    NSString *sel = NSStringFromSelector(anInvocation.selector);
     if([sel hasPrefix:@"VD_"]){
         NSLog(@"#warnning:VD Interface method:%@ not connect VM!!!",sel);
+        if(![sel containsString:@":"]){
+            NSMethodSignature *signature = [anInvocation methodSignatureForSelector:anInvocation.selector];
+            const char *returnType = signature.methodReturnType;
+            if( !strcmp(returnType, @encode(NSArray))){
+                [anInvocation setReturnValue:(__bridge void * _Nonnull)([LYViewData test:20])];
+            }else if (!strcmp(returnType, @encode(NSInteger))){
+                NSInteger i = 0;
+                [anInvocation setReturnValue:&i];
+            }else if (!strcmp(returnType, @encode(NSString))){
+                [anInvocation setReturnValue:@"undefined"];
+            }
+        }
     }else{
-        [super doesNotRecognizeSelector:aSelector];
+        [super forwardInvocation:anInvocation];
     }
 #else
-    [super doesNotRecognizeSelector:aSelector];
+    [super forwardInvocation:anInvocation];
 #endif
 }
+
+//- (void)doesNotRecognizeSelector:(SEL)aSelector{
+//#if DEBUG
+//    NSString *sel = NSStringFromSelector(aSelector);
+//    if([sel hasPrefix:@"VD_"]){
+//        NSLog(@"#warnning:VD Interface method:%@ not connect VM!!!",sel);
+//        if(![sel containsString:@":"]){
+//            NSMethodSignature *signature = [self.class instanceMethodSignatureForSelector:aSelector];
+//            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+//            [invocation setSelector:aSelector];
+//            const char *returnType = signature.methodReturnType;
+//            if( !strcmp(returnType, @encode(NSArray))){
+//                [invocation setReturnValue:(__bridge void * _Nonnull)([LYViewData test:20])];
+//            }else if (!strcmp(returnType, @encode(NSInteger))){
+//                NSInteger i = 0;
+//                [invocation setReturnValue:&i];
+//            }else if (!strcmp(returnType, @encode(NSString))){
+//                [invocation setReturnValue:@"undefined"];
+//            }
+//            [invocation invoke];
+//        }
+//    }else{
+//        [super doesNotRecognizeSelector:aSelector];
+//    }
+//#else
+//    [super doesNotRecognizeSelector:aSelector];
+//#endif
+//}
 
 
 

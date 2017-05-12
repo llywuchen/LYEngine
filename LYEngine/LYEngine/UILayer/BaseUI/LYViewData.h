@@ -10,4 +10,8 @@
 
 @interface LYViewData : NSObject
 
+#if DEBUG
++ (NSArray *)test:(NSInteger) count;
+#endif
+
 @end
