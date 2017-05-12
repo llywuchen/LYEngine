@@ -28,4 +28,9 @@ LYSynthesizeMethod(void, VD_refresh, refresh1);
     self.VM_name = @"changeName";
 }
 
+
+- (void)onViewDidAppear:(BOOL)animated{
+    [super onViewDidAppear:animated];
+    NSLog(@"onViewDidAppear");
+}
 @end

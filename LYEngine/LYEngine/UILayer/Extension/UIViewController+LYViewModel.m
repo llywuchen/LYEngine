@@ -58,4 +58,14 @@ static char *StaticViewModelKey = "UIViewController_StaticViewModelKey";
     }
 }
 
+#pragma mark -
+- (void)registerViewModelClass:(Class)vmClass{
+    [self registerViewModelClass:vmClass params:nil];
+}
+
+- (void)registerViewModelClass:(Class)vmClass params:(NSDictionary *)params{
+    [self setViewModel:[[vmClass alloc] init]];
+    self.viewModel.params = params;
+}
+
 @end

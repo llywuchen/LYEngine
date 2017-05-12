@@ -7,10 +7,18 @@
 //
 
 #import "ViewController.h"
+
 #import "ViewModelProtocol.h"
-#import "ViewModel.h"
 #import "ListVMProtocol.h"
+
+
+//#define ViewControllerReadly
+
+#ifdef ViewControllerReadly
+#import "ViewModel.h"
 #import "ListViewModel.h"
+#endif
+
 
 @interface ViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -30,7 +38,6 @@
 @end
 
 @implementation ViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -108,9 +115,6 @@
         [self.tableView reloadData];
     }];
     
-    
-    [self.listViewModel VD_refresh];
-    
 }
 
 
@@ -119,20 +123,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - getter and setter
-- (NSObject<ViewModel> *)viewModel{
-    if(!_viewModel){
-        _viewModel = [ViewModel new];
-    }
-    return _viewModel;
-}
+#pragma mark - ViewModel
+#ifdef ViewControllerReadly
+LYSynthesizeViewModelReadly(ViewModel,ViewModel);
+LYSynthesizeSubViewModelRegisterAndReadly(self.tableView,listViewModel,ListVMProtocol,ListViewModel);
+#else
+LYSynthesizeViewModelUnReadly(ViewModel);
+LYSynthesizeSubViewModelRegisterAndUnReadly(self.tableView, listViewModel, ListVMProtocol);
+#endif
 
-- (NSObject<ListVMProtocol> *)listViewModel{
-    if(!_listViewModel){
-        _listViewModel  = [ListViewModel new];
-    }
-    return _listViewModel;
-}
 
 #pragma mark - delegate
 - (void)textFieldDidEndEditing:(UITextField *)textField{
@@ -141,6 +140,7 @@
     }else{
         self.viewModel.VD_userPwd = textField.text;
     }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

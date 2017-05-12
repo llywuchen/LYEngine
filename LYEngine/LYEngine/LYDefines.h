@@ -11,6 +11,8 @@
 
 #import "LYAssertionHandler.h"
 
+#define importVM(VMFile) import "##VMFile##"
+
 #define VDPropretyStrong(Type,Name) @property(nonatomic,strong) Type VD_##Name;
 #define VDPropretyCopy(Type,Name) @property(nonatomic,copy) Type VD_##Name;
 #define VDPropretyAssign(Type,Name) @property(nonatomic,assign) Type VD_##Name;
@@ -37,6 +39,40 @@ _##VMproperty = p; \
 - (returnType)VDMethod{\
 [self VMMethod];\
 }
+
+#define LYSynthesizeViewModelReadly(ViewModelProtocolClass,ViewModelClass) \
+- (NSObject<ViewModelProtocolClass> *)viewModel{\
+    if(!_viewModel){\
+        _viewModel = [[ViewModelClass alloc]init];\
+    }\
+    return _viewModel;\
+}
+
+
+#define LYSynthesizeViewModelUnReadly(ViewModelProtocolClass,...) \
+- (NSObject<ViewModelProtocolClass> *)viewModel{\
+_viewModel = nil;\
+return _viewModel;\
+}
+
+#define LYSynthesizeSubViewModelRegisterAndReadly(RegiterView,ViewModel,ViewModelProtocolClass,ViewModelClass) \
+- (NSObject<ViewModelProtocolClass> *)ViewModel{\
+if(!_##ViewModel){\
+[RegiterView registerViewModelClass:[ViewModelClass class]];\
+_##ViewModel = (NSObject<ViewModelProtocolClass> *)RegiterView.viewModel;\
+}\
+return _##ViewModel;\
+}
+
+
+#define LYSynthesizeSubViewModelRegisterAndUnReadly(RegiterView,ViewModel,ViewModelProtocolClass,...) \
+- (NSObject<ViewModelProtocolClass> *)ViewModel{\
+_##ViewModel = nil;\
+return _##ViewModel;\
+}
+
+
+
 
 #define LYLogDebugInfo	do {																			\
 fprintf(stderr, "<%s : %d> %s\n",                                           \

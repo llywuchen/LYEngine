@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self registerViewModel];
     // Do any additional setup after loading the view.
 }
 
@@ -24,6 +25,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)registerViewModel{
+    
+}
+
 
 /*
 #pragma mark - Navigation

@@ -13,4 +13,8 @@
 
 @property (nonatomic,strong,readonly) __kindof LYViewModel* viewModel;
 
+- (void)registerViewModelClass:(Class)vmClass;
+
+- (void)registerViewModelClass:(Class)vmClass params:(NSDictionary *)params;
+
 @end

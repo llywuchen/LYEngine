@@ -14,6 +14,13 @@
 LYSynthesizeProprety(NSMutableArray<LYTViewData *> *, VD_list, VM_list);
 LYSynthesizeMethod(void, VD_refresh, refrsh);
 
+- (void)onViewDidAppear:(BOOL)animated{
+    [super onViewDidAppear:animated];
+    NSLog(@"onViewDidAppear");
+    
+    [self refrsh];
+}
+
 - (void)refrsh{
     self.VM_list = [LYTViewData test:10];
 }
