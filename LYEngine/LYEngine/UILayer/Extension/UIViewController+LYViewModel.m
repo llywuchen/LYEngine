@@ -32,20 +32,20 @@ static char *StaticViewModelKey = "UIViewController_StaticViewModelKey";
 
 
 - (void)mx_viewDidLoad{
-    if(self.viewModel){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewWillMoveToSuperview:)]){
         [self.viewModel onViewWillMoveToSuperview:self.view.superview];
     }
     
     [self mx_viewDidLoad];
     
-    if(self.viewModel){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewDidMoveToSuperview)]){
         [self.viewModel onViewDidMoveToSuperview];
     }
 }
 
 - (void)mx_viewWillAppear:(BOOL)animated{
     [self mx_viewWillAppear:animated];
-    if(self.viewModel){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewWillAppear:)]){
         [self.viewModel onViewWillAppear:animated];
     }
     
@@ -53,7 +53,7 @@ static char *StaticViewModelKey = "UIViewController_StaticViewModelKey";
 
 - (void)mx_viewDidAppear:(BOOL)animated{
     [self mx_viewDidAppear:animated];
-    if(self.viewModel){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewDidAppear:)]){
         [self.viewModel onViewDidAppear:animated];
     }
 }

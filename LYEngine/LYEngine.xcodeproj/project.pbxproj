@@ -74,6 +74,7 @@
 		0AF6FBAB1EB319E8004961D6 /* LYEngine.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0AF6FBAA1EB319E8004961D6 /* LYEngine.pch */; };
 		0AF6FBAF1EB31F8A004961D6 /* NSObject+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF6FBAD1EB31F8A004961D6 /* NSObject+Extension.h */; };
 		0AF6FBB01EB31F8A004961D6 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6FBAE1EB31F8A004961D6 /* NSObject+Extension.m */; };
+		A80944621EC82BC9008A9FE4 /* OCMockito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80944611EC82BC9008A9FE4 /* OCMockito.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +160,8 @@
 		0AF6FBAA1EB319E8004961D6 /* LYEngine.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYEngine.pch; sourceTree = "<group>"; };
 		0AF6FBAD1EB31F8A004961D6 /* NSObject+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
 		0AF6FBAE1EB31F8A004961D6 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		A809445F1EC8059B008A9FE4 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
+		A80944611EC82BC9008A9FE4 /* OCMockito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockito.framework; path = ../Carthage/Build/iOS/OCMockito.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80944621EC82BC9008A9FE4 /* OCMockito.framework in Frameworks */,
 				0A2ABA1A1EC043A500AFC455 /* Realm.framework in Frameworks */,
 				0A2AB9DD1EB9801600AFC455 /* Masonry.framework in Frameworks */,
 				0A2AB9DE1EB9801600AFC455 /* ReactiveObjC.framework in Frameworks */,
@@ -186,6 +190,8 @@
 		0A2AB9CF1EB96EA900AFC455 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A80944611EC82BC9008A9FE4 /* OCMockito.framework */,
+				A809445F1EC8059B008A9FE4 /* OCMock.framework */,
 				0A2ABA191EC043A500AFC455 /* Realm.framework */,
 				0A2AB9D01EB96EA900AFC455 /* Masonry.framework */,
 				0A2AB9D11EB96EA900AFC455 /* ReactiveObjC.framework */,
@@ -595,6 +601,8 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/Masonry.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/ReactiveObjC.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/OCMockito.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/OCHamcrest.framework",
 			);
 			outputPaths = (
 			);

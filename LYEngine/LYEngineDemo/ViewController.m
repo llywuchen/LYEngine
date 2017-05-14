@@ -101,19 +101,7 @@
         make.top.equalTo(_loginBtn.mas_bottom).offset(20);
     }];
     
-    
-    [RACObserve(self.viewModel,VD_userName) subscribeNext:^(id  _Nullable x) {
-        self.userNameField.text = x;
-    }];
-    
-    [RACObserve(self.viewModel,VD_userPwd) subscribeNext:^(id  _Nullable x) {
-        self.userPwdField.text = x;
-    }];
-    
-    [RACObserve(self.listViewModel,VD_list) subscribeNext:^(id  _Nullable x) {
-        [self.tableView reloadData];
-    }];
-    
+    [self bindViewData];
 }
 
 
@@ -126,9 +114,29 @@
 #ifdef ViewControllerReadly
 LYSynthesizeViewModelReadly(ViewModel,ViewModel);
 LYSynthesizeSubViewModelRegisterAndReadly(self.tableView,listViewModel,ListVMProtocol,ListViewModel);
+- (void)bindViewData{
+    [RACObserve(self.viewModel,VD_userName) subscribeNext:^(id  _Nullable x) {
+        self.userNameField.text = x;
+    }];
+    
+    [RACObserve(self.viewModel,VD_userPwd) subscribeNext:^(id  _Nullable x) {
+        self.userPwdField.text = x;
+    }];
+    
+    [RACObserve(self.listViewModel,VD_list) subscribeNext:^(id  _Nullable x) {
+        [self.tableView reloadData];
+    }];
+}
 #else
 LYSynthesizeViewModelUnReadly(ViewModel);
 LYSynthesizeSubViewModelRegisterAndUnReadly(self.tableView, listViewModel, ListVMProtocol);
+- (void)bindViewData{
+    MKTStubProperty(self.listViewModel,VD_list,[LYTViewData test:20]);
+    MKTStubProperty(self.viewModel,VD_userName,@"VD_userName");
+    MKTStubProperty(self.viewModel,VD_userPwd,@"VD_userPwd");
+    self.userNameField.text = self.viewModel.VD_userName;
+    self.userPwdField.text = self.viewModel.VD_userPwd;
+}
 #endif
 
 

@@ -11,8 +11,8 @@
 
 @protocol ViewModel <NSObject>
 
-VDPropretyStrong(NSString *,userName);
-VDPropretyStrong(NSString *,userPwd);
+VDPropretyCopy(NSString *,userName);
+VDPropretyCopy(NSString *,userPwd);
 
 VDMethod(void, refresh);
 

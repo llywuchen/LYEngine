@@ -10,9 +10,14 @@
 #define LYDefines_h
 
 #import "LYAssertionHandler.h"
+#import <objc/runtime.h>
+#import <OCMockito/OCMockito.h>
 
-#define importVM(VMFile) import "##VMFile##"
+#define ToCString(str) #str
+#define ToNSString(str) [NSString stringWithFormat:@"%s",ToCString(str)]
 
+//#define VDPropretyString(Name) @property(nonatomic,copy) NSString *VD_##Name##_str;
+//#define VDPropretyArray(Name) @property(nonatomic,copy) NSArray *VD_##Name##_list;
 #define VDPropretyStrong(Type,Name) @property(nonatomic,strong) Type VD_##Name;
 #define VDPropretyCopy(Type,Name) @property(nonatomic,copy) Type VD_##Name;
 #define VDPropretyAssign(Type,Name) @property(nonatomic,assign) Type VD_##Name;
@@ -51,7 +56,20 @@ _##VMproperty = p; \
 
 #define LYSynthesizeViewModelUnReadly(ViewModelProtocolClass,...) \
 - (NSObject<ViewModelProtocolClass> *)viewModel{\
-_viewModel = (NSObject<ViewModelProtocolClass> *)[LYViewModel new];\
+if(!_##viewModel){\
+_##viewModel = mockObjectAndProtocol([LYViewModel class], @protocol(ViewModelProtocolClass));\
+unsigned int protocolPCount ;\
+objc_property_t *properties = protocol_copyPropertyList(NSProtocolFromString(ToNSString(ViewModelProtocolClass)), &protocolPCount);\
+for (int i = 0; i < protocolPCount; i++) {\
+objc_property_t property = properties[i];\
+NSString *propertyName = [[NSString alloc] initWithCString:property_getName(property) encoding:NSUTF8StringEncoding];\
+if([propertyName hasSuffix:@"_list"]){\
+LYClassAddArrayProperty(_##viewModel,propertyName);\
+}else if([propertyName hasSuffix:@"_str"]){\
+LYClassAddStringProperty(_##viewModel,propertyName);\
+}\
+}\
+}\
 return _viewModel;\
 }
 
@@ -67,12 +85,26 @@ return _##ViewModel;\
 
 #define LYSynthesizeSubViewModelRegisterAndUnReadly(RegiterView,ViewModel,ViewModelProtocolClass,...) \
 - (NSObject<ViewModelProtocolClass> *)ViewModel{\
-_##ViewModel = (NSObject<ViewModelProtocolClass> *)[LYViewModel new];\
+if(!_##ViewModel){\
+_##ViewModel = mockObjectAndProtocol([LYViewModel class], @protocol(ViewModelProtocolClass));\
+}\
 return _##ViewModel;\
 }
 
 
+#define LYClassAddStringProperty(class_ivar,PropertyString) \
+objc_property_attribute_t type = { "T", "@\"NSString\"" };\
+objc_property_attribute_t ownership = { "C", "" }; \
+objc_property_attribute_t backingivar  = { "V",ToCString(PropertyString) };\
+objc_property_attribute_t attrs[] = { type, ownership, backingivar};\
+class_addProperty([class_ivar class], PropertyString.UTF8String, attrs, 3);
 
+#define LYClassAddArrayProperty(class_ivar,PropertyString) \
+objc_property_attribute_t type = { "T", "@\"NSArray\"" };\
+objc_property_attribute_t ownership = { "C", "" }; \
+objc_property_attribute_t backingivar  = { "V", ToCString(PropertyString) };\
+objc_property_attribute_t attrs[] = { type, ownership, backingivar};\
+class_addProperty([class_ivar class], PropertyString.UTF8String, attrs, 3);
 
 #define LYLogDebugInfo	do {																			\
 fprintf(stderr, "<%s : %d> %s\n",                                           \

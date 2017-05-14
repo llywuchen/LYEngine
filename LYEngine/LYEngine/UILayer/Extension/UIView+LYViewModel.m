@@ -37,35 +37,35 @@ static char *StaticViewModelKey = "UIView_StaticViewModelKey";
 
 - (void)mx_willMoveToSuperview:(UIView *)newSuperview{
     [self mx_willMoveToSuperview:newSuperview];
-    if(self.viewModel&&newSuperview){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewWillMoveToSuperview:)]&&newSuperview){
         [self.viewModel onViewWillMoveToSuperview:newSuperview];
     }
 }
 
 - (void)mx_willMoveToWindow:(UIWindow *)newWindow{
     [self mx_willMoveToWindow:newWindow];
-    if(self.viewModel&&newWindow){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewWillAppear:)]&&newWindow){
         [self.viewModel onViewWillAppear:false];
     }
 }
 
 - (void)mx_didMoveToSuperview{
     [self mx_didMoveToSuperview];
-    if(self.viewModel&&self.superview){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewDidMoveToSuperview)]&&self.superview){
         [self.viewModel onViewDidMoveToSuperview];
     }
 }
 
 - (void)mx_didMoveToWindow{
     [self mx_didMoveToWindow];
-    if(self.viewModel&&self.window){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewDidAppear:)]&&self.window){
         [self.viewModel onViewDidAppear:false];
     }
 }
 
 - (void)mx_removeFromSuperview{
     [self mx_removeFromSuperview];
-    if(self.viewModel){
+    if(self.viewModel&&[self.viewModel respondsToSelector:@selector(onViewRemoveFromSuperview:)]){
         [self.viewModel onViewRemoveFromSuperview];
     }
 }
