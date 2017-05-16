@@ -7,6 +7,7 @@
 //
 
 #import "MGJRouter.h"
+#import "LYUseCase.h"
 
 @interface LYModule : MGJRouter
 
@@ -23,6 +24,9 @@
 
 - (void)onModuleUninstalled;
 
+- (void)registerUserCase;
+- (void)clearnUpUserCase;
+- (__kindof LYUseCase *)obtainUseCase:(Class) useCaseClass;
 
 
 @end

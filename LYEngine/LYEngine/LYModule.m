@@ -9,12 +9,14 @@
 #import "LYModule.h"
 #import "LYDefines.h"
 #import "NSObject+LYLock.h"
+#import "LYUseCaseManager.h"
 
 static NSMutableDictionary *_moduleDic;
 @interface LYModule(){
     
 }
 @property (nonatomic,assign) BOOL isOnload;
+@property (nonatomic,strong) LYUseCaseManager *userCaseManager;
 
 @end
 
