@@ -31,4 +31,9 @@
     [super unInitRouter];
 }
 
+- (void)registerUserCase{
+    [self registerUserCase:[ListUserCase class]];
+    [self registerUserCase:[MineUserCase class]];
+}
+
 @end

@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LYModule;
 //#import "LYMessageEngine.h"
 
-@protocol LYUseCaseDelegate <NSObject>
+@protocol LYUserCaseDelegate <NSObject>
 
 - (void)open;
 - (void)close;
 
 @end
 
-@interface LYUseCase : NSObject//LYMessageHandle
+@interface LYUserCase : NSObject//LYMessageHandle
 - (void)onOpen;
 - (void)onClose;
+
++ (instancetype)instance;
++ (__kindof LYModule *)belongModule;
 @end

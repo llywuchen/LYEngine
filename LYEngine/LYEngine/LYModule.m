@@ -9,14 +9,14 @@
 #import "LYModule.h"
 #import "LYDefines.h"
 #import "NSObject+LYLock.h"
-#import "LYUseCaseManager.h"
+#import "LYUserCaseManager.h"
 
 static NSMutableDictionary *_moduleDic;
 @interface LYModule(){
     
 }
 @property (nonatomic,assign) BOOL isOnload;
-@property (nonatomic,strong) LYUseCaseManager *userCaseManager;
+@property (nonatomic,strong) LYUserCaseManager *userCaseManager;
 
 @end
 
@@ -36,15 +36,35 @@ static NSMutableDictionary *_moduleDic;
     return moudule;
 }
 
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.userCaseManager = [LYUserCaseManager sharedInstance];
+    }
+    return self;
+}
+
 - (void)onModuleInstlled{
     NSLog(@"Module : %@ installed!",NSStringFromClass(self.class));
     [self initRouter];
+    [self registerUserCase];
 }
 
 - (void)onModuleUninstalled{
     NSLog(@"Module : %@ unInstalled!",NSStringFromClass(self.class));
     [self unInitRouter];
+    [self clearnUpUserCase];
 }
+
+- (void)registerUserCase{
+    NSLog(@"registerUserCase");
+}
+
+- (void)clearnUpUserCase{
+    NSLog(@"clearnUpUserCase");
+    [self.userCaseManager closeAllUserCasesByBelongModuleClass:self.class];
+}
+
 
 #pragma mark - register
 + (void)install{
@@ -80,6 +100,19 @@ static NSMutableDictionary *_moduleDic;
     return ((LYModule *)[self sharedInstance]).isOnload;
 }
 
+#pragma maark - useCase
+- (void)registerUserCase:(Class) userCaseClass{
+//    NSLog(@"registerUserCase:%@",NSStringFromClass(userCaseClass));
+    [self.userCaseManager registerUserCase:userCaseClass belongModuleClass:self.class];
+}
+
+- (__kindof LYUserCase *)obtainUserCase:(Class) userCaseClass{
+    return [self.userCaseManager obtainUserCase:userCaseClass belongModuleClass:self.class];
+}
+
+- (void)closeUserCase:(Class)userCaseClass{
+    return [self.userCaseManager closeUserCase:userCaseClass belongModuleClass:self.class];
+}
 
 #pragma mark - router
 - (void)initRouter{

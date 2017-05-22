@@ -30,8 +30,18 @@
     [self.window makeKeyWindow];
     [self.window makeKeyAndVisible];
     
-    [MainModule unInstall];
-    [MineModule unInstall];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3ull*NSEC_PER_SEC),dispatch_get_global_queue(0, 0), ^{
+        [MainModule unInstall];
+        [MineModule unInstall];
+    });
+    
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            [MainModule unInstall];
+//            [MineModule unInstall];
+//    });
+    
+//    [MainModule unInstall];
+//    [MineModule unInstall];
     return YES;
 }
 

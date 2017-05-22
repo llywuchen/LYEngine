@@ -7,6 +7,7 @@
 //
 
 #import "ViewModel.h"
+#import "MineUserCase.h"
 
 @implementation ViewModel
 
@@ -32,5 +33,6 @@ LYSynthesizeMethod(void, VD_refresh, refresh1);
 - (void)onViewDidAppear:(BOOL)animated{
     [super onViewDidAppear:animated];
     NSLog(@"onViewDidAppear");
+    [[MineUserCase instance] getMineInfo];
 }
 @end

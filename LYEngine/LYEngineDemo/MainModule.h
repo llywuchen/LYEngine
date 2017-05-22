@@ -7,6 +7,8 @@
 //
 
 #import "LYModule.h"
+#import "ListUserCase.h"
+#import "MineUserCase.h"
 
 #define MainVC @"MainVC"
 
