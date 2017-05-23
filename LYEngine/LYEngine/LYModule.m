@@ -62,7 +62,7 @@ static NSMutableDictionary *_moduleDic;
 
 - (void)clearnUpUserCase{
     NSLog(@"clearnUpUserCase");
-    [self.userCaseManager closeAllUserCasesByBelongModuleClass:self.class];
+    [self.userCaseManager closeAllUserCasesWithBelongModuleClass:self.class];
 }
 
 

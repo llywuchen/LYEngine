@@ -32,7 +32,7 @@
     return intance;
 }
 
-+ (__kindof LYModule *)belongModuleByUserCaseClass:(Class) userCaseClass{
++ (__kindof LYModule *)belongModuleWithUserCaseClass:(Class) userCaseClass{
     NSString *userCaseKey = [NSString stringWithFormat:@"%p",userCaseClass];
     
     LYAssert([[self sharedInstance].userCaseToModuleDic objectForKey:userCaseKey], @"%@ has not registered",NSStringFromClass(userCaseClass));
@@ -100,7 +100,7 @@
     }];
 }
 
-- (void)closeAllUserCasesByBelongModuleClass:(Class )moduleClass{
+- (void)closeAllUserCasesWithBelongModuleClass:(Class )moduleClass{
     NSString *modueKey = [NSString stringWithFormat:@"%p",moduleClass];
     NSMutableArray *array = [userCaseRefDic objectForKey:modueKey];
     

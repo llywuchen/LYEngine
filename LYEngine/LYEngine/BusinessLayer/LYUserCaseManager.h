@@ -15,7 +15,7 @@
 
 + (LYUserCaseManager *)sharedInstance;
 
-+ (__kindof LYModule *)belongModuleByUserCaseClass:(Class) userCaseClass;
++ (__kindof LYModule *)belongModuleWithUserCaseClass:(Class) userCaseClass;
 
 - (void)registerUserCase:(Class) userCaseClass belongModuleClass:(Class)moduleClass;
 
@@ -23,7 +23,7 @@
 
 - (void)closeUserCase:(Class)userCaseClass belongModuleClass:(Class)moduleClass;
 
-- (void)closeAllUserCasesByBelongModuleClass:(Class)moduleClass;
+- (void)closeAllUserCasesWithBelongModuleClass:(Class)moduleClass;
 
 
 @end

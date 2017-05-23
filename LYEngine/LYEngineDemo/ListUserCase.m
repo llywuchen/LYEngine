@@ -11,7 +11,12 @@
 @implementation ListUserCase
 
 - (NSArray *)getList{
-    return [NSArray new];
+    int i;
+    NSMutableArray *a = [NSMutableArray array];
+    while (i <10) {
+        [a addObject:@{@"name":@"namei",@"nike":@"nicki"}];
+    }
+    return a;
 }
 
 @end

@@ -168,6 +168,7 @@
 		A87FD4E21ED334A5008B399D /* MineUserCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserCase.m; sourceTree = "<group>"; };
 		A87FD4E41ED334BA008B399D /* ListUserCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListUserCase.h; sourceTree = "<group>"; };
 		A87FD4E51ED334BA008B399D /* ListUserCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListUserCase.m; sourceTree = "<group>"; };
+		A87FD4E71ED3BAA5008B399D /* MainUserCaseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUserCaseProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +251,7 @@
 				A87FD4E21ED334A5008B399D /* MineUserCase.m */,
 				A87FD4E41ED334BA008B399D /* ListUserCase.h */,
 				A87FD4E51ED334BA008B399D /* ListUserCase.m */,
+				A87FD4E71ED3BAA5008B399D /* MainUserCaseProtocol.h */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";

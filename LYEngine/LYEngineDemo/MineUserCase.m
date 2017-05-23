@@ -11,7 +11,7 @@
 @implementation MineUserCase
 
 - (NSDictionary *)getMineInfo{
-    return @{};
+    return @{@"pwd":@"pwd",@"name":@"name"};
 }
 
 @end

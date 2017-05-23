@@ -6,8 +6,8 @@
 //  Copyright © 2017年 franklin. All rights reserved.
 //
 
-@interface ListUserCase : LYUserCase
+#import "MainUserCaseProtocol.h"
 
-- (NSArray *)getList;
+@interface ListUserCase : LYUserCase <ListUserCaseProtocol>
 
 @end

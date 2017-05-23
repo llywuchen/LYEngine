@@ -7,7 +7,7 @@
 //
 
 #import "ViewModel.h"
-#import "MineUserCase.h"
+#import "MainUserCaseProtocol.h"
 
 @implementation ViewModel
 
@@ -33,6 +33,13 @@ LYSynthesizeMethod(void, VD_refresh, refresh1);
 - (void)onViewDidAppear:(BOOL)animated{
     [super onViewDidAppear:animated];
     NSLog(@"onViewDidAppear");
-    [[MineUserCase instance] getMineInfo];
+    LYUserCase<MineUserCaseProtocol> *mineUserCase = (LYUserCase<MineUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(MineUserCaseProtocol)];
+    NSDictionary *info =[mineUserCase getMineInfo];
+    [self transformAction:info];
+}
+
+- (void)transformAction:(NSDictionary *)dic{
+    self.VM_pwd = [dic objectForKey:@"pwd"];
+    self.VM_name = [dic objectForKey:@"name"];
 }
 @end

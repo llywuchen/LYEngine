@@ -8,6 +8,7 @@
 
 #import "ListViewModel.h"
 #import "LYViewData.h"
+#import "MainUserCaseProtocol.h"
 
 @implementation ListViewModel
 
@@ -22,7 +23,14 @@ LYSynthesizeMethod(void, VD_refresh, refrsh);
 }
 
 - (void)refrsh{
-    self.VM_list = [LYTViewData test:10];
+    LYUserCase<ListUserCaseProtocol> *listUserCase = (LYUserCase<ListUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(ListUserCaseProtocol)];
+    NSArray *list =[listUserCase getList];
+    
+    self.VM_list = [self transformAction:list];
+}
+
+- (NSMutableArray<LYTViewData *> *)transformAction:(NSArray *)modelList{
+    return [LYTViewData test:10];
 }
 
 @end

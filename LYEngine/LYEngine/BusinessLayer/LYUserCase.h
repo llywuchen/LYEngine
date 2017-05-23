@@ -22,5 +22,6 @@
 - (void)onClose;
 
 + (instancetype)instance;
++ (instancetype)instanceWithProtoco:(Protocol *)protocol;
 + (__kindof LYModule *)belongModule;
 @end

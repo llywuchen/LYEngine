@@ -7,9 +7,9 @@
 //
 
 #import <LYEngine/LYEngine.h>
+#import "MainUserCaseProtocol.h"
 
-@interface MineUserCase : LYUserCase
+@interface MineUserCase : LYUserCase <MineUserCaseProtocol>
 
-- (NSDictionary *)getMineInfo;
 
 @end

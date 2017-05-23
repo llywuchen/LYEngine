@@ -8,6 +8,8 @@
 
 #import "MainModule.h"
 #import "ViewController.h"
+#import "ListUserCase.h"
+#import "MineUserCase.h"
 
 @implementation MainModule
 
