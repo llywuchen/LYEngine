@@ -77,6 +77,7 @@
 		A80944621EC82BC9008A9FE4 /* OCMockito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80944611EC82BC9008A9FE4 /* OCMockito.framework */; };
 		A87FD4E31ED334A5008B399D /* MineUserCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A87FD4E21ED334A5008B399D /* MineUserCase.m */; };
 		A87FD4E61ED334BA008B399D /* ListUserCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A87FD4E51ED334BA008B399D /* ListUserCase.m */; };
+		A87FD4E91ED3CD28008B399D /* LYWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87FD4E81ED3CD28008B399D /* LYWebService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +170,7 @@
 		A87FD4E41ED334BA008B399D /* ListUserCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListUserCase.h; sourceTree = "<group>"; };
 		A87FD4E51ED334BA008B399D /* ListUserCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListUserCase.m; sourceTree = "<group>"; };
 		A87FD4E71ED3BAA5008B399D /* MainUserCaseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUserCaseProtocol.h; sourceTree = "<group>"; };
+		A87FD4E81ED3CD28008B399D /* LYWebService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LYWebService.framework; path = ../Carthage/Build/iOS/LYWebService.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A87FD4E91ED3CD28008B399D /* LYWebService.framework in Frameworks */,
 				A80944621EC82BC9008A9FE4 /* OCMockito.framework in Frameworks */,
 				0A2ABA1A1EC043A500AFC455 /* Realm.framework in Frameworks */,
 				0A2AB9DD1EB9801600AFC455 /* Masonry.framework in Frameworks */,
@@ -197,6 +200,7 @@
 		0A2AB9CF1EB96EA900AFC455 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A87FD4E81ED3CD28008B399D /* LYWebService.framework */,
 				A80944611EC82BC9008A9FE4 /* OCMockito.framework */,
 				A809445F1EC8059B008A9FE4 /* OCMock.framework */,
 				0A2ABA191EC043A500AFC455 /* Realm.framework */,
@@ -615,12 +619,14 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/OCMockito.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/OCHamcrest.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/LYWebService.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/AFNetworking.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n$PROJECT_DIR/../Carthage/Build/iOS/LYWebService.framework/create_webservice.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 

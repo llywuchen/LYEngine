@@ -9,7 +9,7 @@
 #import <LYEngine/LYEngine.h>
 #import "MainUserCaseProtocol.h"
 
-@interface MineUserCase : LYUserCase <MineUserCaseProtocol>
+@interface MineUserCase : LYUserCase <MineUserCaseProtocol,MineUserCaseAPI>
 
 
 @end

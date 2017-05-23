@@ -10,5 +10,6 @@
 #define LYBusinessLayer_h
 
 #import "LYViewModel.h"
+#import "LYUserCase.h"
 
 #endif /* LYBusinessLayer_h */

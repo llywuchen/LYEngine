@@ -33,9 +33,12 @@ LYSynthesizeMethod(void, VD_refresh, refresh1);
 - (void)onViewDidAppear:(BOOL)animated{
     [super onViewDidAppear:animated];
     NSLog(@"onViewDidAppear");
-    LYUserCase<MineUserCaseProtocol> *mineUserCase = (LYUserCase<MineUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(MineUserCaseProtocol)];
-    NSDictionary *info =[mineUserCase getMineInfo];
-    [self transformAction:info];
+    LYUserCase<MineUserCaseProtocol,MineUserCaseAPI> *mineUserCase = (LYUserCase<MineUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(MineUserCaseProtocol)];
+    [mineUserCase getMineInfoWithSuceessBlock:^(NSDictionary *result, NSURLResponse *response) {
+        [self transformAction:result];
+    } failBlock:^(NSString *errorMessage, NSURLResponse *response, NSError *error) {
+        
+    }];
 }
 
 - (void)transformAction:(NSDictionary *)dic{

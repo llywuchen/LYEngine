@@ -14,4 +14,9 @@
 #import "LYModel+Cache.h"
 #import "NSArray+Cache.h"
 
+#import "LYURLProtocol.h"
+#import "LYURLProtocolResponse.h"
+
+#import <LYWebService/LYWebService.h>
+
 #endif /* LYDataLayer_h */

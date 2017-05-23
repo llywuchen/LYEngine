@@ -8,6 +8,6 @@
 
 #import "MainUserCaseProtocol.h"
 
-@interface ListUserCase : LYUserCase <ListUserCaseProtocol>
+@interface ListUserCase : LYUserCase <ListUserCaseProtocol,ListUserCaseAPI>
 
 @end

@@ -5,7 +5,7 @@
 
 * UI logic
 
-* UI style
+* UI style (todo)
 
 * DataBinding
 
@@ -13,13 +13,20 @@
 
 * webService
 
-* push
+* push (todo)
 
 * dataCache
 
 * data transform
 
 * resful api
+
+* mock
+
+* log (todo) 
+
+* env (todo)
+
 
 
 

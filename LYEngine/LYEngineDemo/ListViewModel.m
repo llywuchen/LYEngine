@@ -23,10 +23,13 @@ LYSynthesizeMethod(void, VD_refresh, refrsh);
 }
 
 - (void)refrsh{
-    LYUserCase<ListUserCaseProtocol> *listUserCase = (LYUserCase<ListUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(ListUserCaseProtocol)];
-    NSArray *list =[listUserCase getList];
+    LYUserCase<ListUserCaseProtocol,ListUserCaseAPI> *listUserCase = (LYUserCase<ListUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(ListUserCaseProtocol)];
+    [listUserCase getListWithSuceessBlock:^(NSArray *result, NSURLResponse *response) {
+        self.VM_list = [self transformAction:result];
+    } failBlock:^(NSString *errorMessage, NSURLResponse *response, NSError *error) {
+        self.VM_list = [self transformAction:nil];
+    }];
     
-    self.VM_list = [self transformAction:list];
 }
 
 - (NSMutableArray<LYTViewData *> *)transformAction:(NSArray *)modelList{
