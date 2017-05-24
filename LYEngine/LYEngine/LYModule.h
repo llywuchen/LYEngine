@@ -11,12 +11,19 @@
 
 @interface LYModule : MGJRouter
 
-+ (instancetype)sharedInstance;
+@property (nonatomic,copy) NSString *APIHost;
+@property (nonatomic,copy) NSDictionary *APIPublicParams;
+@property (nonatomic,copy) NSString *H5Host;
+
+
++ (LYModule *)sharedInstance;
++ (instancetype)instance;
 
 + (void)install;
 + (void)unInstall;
 + (BOOL)isInstalled;
 
+- (void)initEnvironment;
 - (void)initRouter;
 - (void)unInitRouter;
 

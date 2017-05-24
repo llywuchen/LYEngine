@@ -24,16 +24,24 @@ LYSynthesizeMethod(void, VD_refresh, refrsh);
 
 - (void)refrsh{
     LYUserCase<ListUserCaseProtocol,ListUserCaseAPI> *listUserCase = (LYUserCase<ListUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(ListUserCaseProtocol)];
-    [listUserCase getListWithSuceessBlock:^(NSArray *result, NSURLResponse *response) {
+    [listUserCase getListWithCount:10 suceessBlock:^(NSArray<Mine *> *result, NSURLResponse *response) {
         self.VM_list = [self transformAction:result];
     } failBlock:^(NSString *errorMessage, NSURLResponse *response, NSError *error) {
-        self.VM_list = [self transformAction:nil];
+        
     }];
     
 }
 
-- (NSMutableArray<LYTViewData *> *)transformAction:(NSArray *)modelList{
-    return [LYTViewData test:10];
+- (NSMutableArray<LYTViewData *> *)transformAction:(NSArray<Mine *> *)modelList{
+    NSMutableArray *a = [NSMutableArray array];
+    for(Mine *model in modelList){
+        [a addObject:[self transform:model]];
+    }
+    return a;
+}
+
+- (LYTViewData *)transform:(Mine *)model{
+    return [LYTViewData instanceWithName:model.name nick:model.site];
 }
 
 @end

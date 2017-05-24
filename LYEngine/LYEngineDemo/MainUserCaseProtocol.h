@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Mine.h"
+@class Mine;
 
 @protocol MineUserCaseAPI <LYWebService>
 
-@POST("/login")
-- (NSURLSessionDataTask*)getMineInfoWithSuceessBlock:LY_SUCCESS_BLOCK(NSDictionary*)callback failBlock:LY_FAIL_BLOCK(NSString*)errorMessage;
+@GET("/get")
+- (NSURLSessionDataTask*)getMineInfoWithSuceessBlock:LY_SUCCESS_BLOCK(Mine*)callback failBlock:LY_FAIL_BLOCK(NSString*)errorMessage;
 
 @end
 
@@ -22,8 +24,8 @@
 
 @protocol ListUserCaseAPI <LYWebService>
 
-@POST("/login2")
-- (NSURLSessionDataTask*)getListWithSuceessBlock:LY_SUCCESS_BLOCK(NSArray*)callback failBlock:LY_FAIL_BLOCK(NSString*)errorMessage;
+@GET("/post")
+- (NSURLSessionDataTask*)getListWithCount:(NSInteger)count suceessBlock:LY_SUCCESS_BLOCK(NSArray<Mine *>*)callback failBlock:LY_FAIL_BLOCK(NSString*)errorMessage;
 
 @end
 

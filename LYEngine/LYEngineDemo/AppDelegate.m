@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [LYModule sharedInstance].APIHost = @"http://www.hoolyshine.com/llywuchen";
+    LYWebClientInstance.endPoint = [NSURL URLWithString:@"http://www.hoolyshine.com/llywuchen"];
     [MainModule install];
     [MineModule install];
     
@@ -31,14 +33,10 @@
     [self.window makeKeyAndVisible];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3ull*NSEC_PER_SEC),dispatch_get_global_queue(0, 0), ^{
-        [MainModule unInstall];
-        [MineModule unInstall];
+//        [MainModule unInstall];
+//        [MineModule unInstall];
     });
     
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//            [MainModule unInstall];
-//            [MineModule unInstall];
-//    });
     
 //    [MainModule unInstall];
 //    [MineModule unInstall];

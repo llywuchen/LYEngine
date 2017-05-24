@@ -28,8 +28,17 @@ static NSMutableDictionary *_moduleDic;
     }
 }
 
-+ (instancetype)sharedInstance
++ (LYModule *)sharedInstance
 {
+    static LYModule *shareInstance = nil;
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        shareInstance = [[LYModule alloc]init];
+    });
+    return shareInstance;
+}
+
++ (instancetype)instance{
     [_moduleDic ly_lockObject];
     LYModule *moudule = [_moduleDic objectForKey:NSStringFromClass(self.class)];
     [_moduleDic ly_unlockObject];
@@ -44,8 +53,13 @@ static NSMutableDictionary *_moduleDic;
     return self;
 }
 
+- (void)initEnvironment{
+    NSLog(@"Module : %@ initEnvironment!",NSStringFromClass(self.class));
+}
+
 - (void)onModuleInstlled{
     NSLog(@"Module : %@ installed!",NSStringFromClass(self.class));
+    [self initEnvironment];
     [self initRouter];
     [self registerUserCase];
 }
@@ -68,7 +82,8 @@ static NSMutableDictionary *_moduleDic;
 
 #pragma mark - register
 + (void)install{
-    LYModule * m = [self sharedInstance];
+    LYAssert(self!=[LYModule class], @"to be installed module must extends LYModule!!!");
+    LYModule * m = [self instance];
     if(m){
         LYAssert(false, @"the Module:%@ has Registered !",NSStringFromClass(m.class));
     }else{
@@ -83,7 +98,8 @@ static NSMutableDictionary *_moduleDic;
 }
 
 + (void)unInstall{
-    LYModule * m = [self sharedInstance];
+    LYAssert(self!=[LYModule class], @"to be installed module must extends LYModule!!!");
+    LYModule * m = [self instance];
     if(!m){
         LYAssert(false, @"the Module:%@ has Unregistered !",NSStringFromClass(m.class));
     }else{
@@ -97,7 +113,8 @@ static NSMutableDictionary *_moduleDic;
 }
 
 + (BOOL)isInstalled{
-    return ((LYModule *)[self sharedInstance]).isOnload;
+    LYAssert(self!=[LYModule class], @"to be installed module must extends LYModule!!!");
+    return ((LYModule *)[self instance]).isOnload;
 }
 
 #pragma maark - useCase
@@ -121,6 +138,34 @@ static NSMutableDictionary *_moduleDic;
 
 - (void)unInitRouter{
     //overWrite
+}
+
+#pragma mark - env
+- (NSString *)APIHost{
+    if(_APIHost.length>0){
+        return _APIHost;
+    }else{
+        LYAssert(self.class!=[LYModule class], @"LYModule Environment APIHost must be inited!!!");
+        return [self.class sharedInstance].APIHost;
+    }
+}
+
+- (NSString *)H5Host{
+    if(_H5Host.length>0){
+        return _H5Host;
+    }else{
+        LYAssert(self.class!=[LYModule class], @"LYModule Environment H5Host must be inited!!!");
+        return [self.class sharedInstance].H5Host;
+    }
+}
+
+- (NSDictionary *)APIPublicParams{
+    if(_APIPublicParams){
+        return _APIPublicParams;
+    }else{
+        LYAssert(self.class!=[LYModule class], @"LYModule Environment APIPublicParams must be inited!!!");
+        return [self.class sharedInstance].APIPublicParams;
+    }
 }
 
 @end

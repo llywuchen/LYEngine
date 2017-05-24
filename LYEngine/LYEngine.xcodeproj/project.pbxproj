@@ -75,6 +75,8 @@
 		0AF6FBAF1EB31F8A004961D6 /* NSObject+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF6FBAD1EB31F8A004961D6 /* NSObject+Extension.h */; };
 		0AF6FBB01EB31F8A004961D6 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6FBAE1EB31F8A004961D6 /* NSObject+Extension.m */; };
 		A80944621EC82BC9008A9FE4 /* OCMockito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80944611EC82BC9008A9FE4 /* OCMockito.framework */; };
+		A84A26B81ED53D2800CDC0BE /* Mine.m in Sources */ = {isa = PBXBuildFile; fileRef = A84A26B71ED53D2800CDC0BE /* Mine.m */; };
+		A84A26BA1ED5406100CDC0BE /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A26B91ED5406000CDC0BE /* YYModel.framework */; };
 		A87FD4E31ED334A5008B399D /* MineUserCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A87FD4E21ED334A5008B399D /* MineUserCase.m */; };
 		A87FD4E61ED334BA008B399D /* ListUserCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A87FD4E51ED334BA008B399D /* ListUserCase.m */; };
 		A87FD4E91ED3CD28008B399D /* LYWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87FD4E81ED3CD28008B399D /* LYWebService.framework */; };
@@ -165,6 +167,9 @@
 		0AF6FBAE1EB31F8A004961D6 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
 		A809445F1EC8059B008A9FE4 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 		A80944611EC82BC9008A9FE4 /* OCMockito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockito.framework; path = ../Carthage/Build/iOS/OCMockito.framework; sourceTree = "<group>"; };
+		A84A26B61ED53D2800CDC0BE /* Mine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mine.h; sourceTree = "<group>"; };
+		A84A26B71ED53D2800CDC0BE /* Mine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mine.m; sourceTree = "<group>"; };
+		A84A26B91ED5406000CDC0BE /* YYModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYModel.framework; path = ../Carthage/Build/iOS/YYModel.framework; sourceTree = "<group>"; };
 		A87FD4E11ED334A5008B399D /* MineUserCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineUserCase.h; sourceTree = "<group>"; };
 		A87FD4E21ED334A5008B399D /* MineUserCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserCase.m; sourceTree = "<group>"; };
 		A87FD4E41ED334BA008B399D /* ListUserCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListUserCase.h; sourceTree = "<group>"; };
@@ -178,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84A26BA1ED5406100CDC0BE /* YYModel.framework in Frameworks */,
 				A87FD4E91ED3CD28008B399D /* LYWebService.framework in Frameworks */,
 				A80944621EC82BC9008A9FE4 /* OCMockito.framework in Frameworks */,
 				0A2ABA1A1EC043A500AFC455 /* Realm.framework in Frameworks */,
@@ -200,6 +206,7 @@
 		0A2AB9CF1EB96EA900AFC455 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A84A26B91ED5406000CDC0BE /* YYModel.framework */,
 				A87FD4E81ED3CD28008B399D /* LYWebService.framework */,
 				A80944611EC82BC9008A9FE4 /* OCMockito.framework */,
 				A809445F1EC8059B008A9FE4 /* OCMock.framework */,
@@ -255,7 +262,6 @@
 				A87FD4E21ED334A5008B399D /* MineUserCase.m */,
 				A87FD4E41ED334BA008B399D /* ListUserCase.h */,
 				A87FD4E51ED334BA008B399D /* ListUserCase.m */,
-				A87FD4E71ED3BAA5008B399D /* MainUserCaseProtocol.h */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -263,6 +269,9 @@
 		0A2ABA221EC0459800AFC455 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A84A26B61ED53D2800CDC0BE /* Mine.h */,
+				A84A26B71ED53D2800CDC0BE /* Mine.m */,
+				A87FD4E71ED3BAA5008B399D /* MainUserCaseProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -621,6 +630,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/OCHamcrest.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/LYWebService.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/AFNetworking.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/YYModel.framework",
 			);
 			outputPaths = (
 			);
@@ -670,6 +680,7 @@
 				A87FD4E31ED334A5008B399D /* MineUserCase.m in Sources */,
 				A87FD4E61ED334BA008B399D /* ListUserCase.m in Sources */,
 				0A2AB9C71EB969A200AFC455 /* ListViewModel.m in Sources */,
+				A84A26B81ED53D2800CDC0BE /* Mine.m in Sources */,
 				0AF33B961E88EA92001311C3 /* main.m in Sources */,
 				0A2AB9C81EB969A200AFC455 /* LYTViewData.m in Sources */,
 				0A2ABA2A1EC0509000AFC455 /* MineModule.m in Sources */,

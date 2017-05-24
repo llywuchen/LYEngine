@@ -34,15 +34,15 @@ LYSynthesizeMethod(void, VD_refresh, refresh1);
     [super onViewDidAppear:animated];
     NSLog(@"onViewDidAppear");
     LYUserCase<MineUserCaseProtocol,MineUserCaseAPI> *mineUserCase = (LYUserCase<MineUserCaseProtocol> *)[LYUserCase instanceWithProtoco:@protocol(MineUserCaseProtocol)];
-    [mineUserCase getMineInfoWithSuceessBlock:^(NSDictionary *result, NSURLResponse *response) {
+    [mineUserCase getMineInfoWithSuceessBlock:^(Mine *result, NSURLResponse *response) {
         [self transformAction:result];
     } failBlock:^(NSString *errorMessage, NSURLResponse *response, NSError *error) {
         
     }];
 }
 
-- (void)transformAction:(NSDictionary *)dic{
-    self.VM_pwd = [dic objectForKey:@"pwd"];
-    self.VM_name = [dic objectForKey:@"name"];
+- (void)transformAction:(Mine *)model{
+    self.VM_pwd = model.nick;
+    self.VM_name = model.name;
 }
 @end

@@ -23,16 +23,14 @@
     return _requestManager;
 }
 
-- (NSURLSessionDataTask*)getMineInfoWithSuceessBlock:(void (^)(NSDictionary *, NSURLResponse *))callback failBlock:(void (^)(NSString *, NSURLResponse *, NSError *))errorMessage{
+- (NSURLSessionDataTask*)getMineInfoWithSuceessBlock:(void (^)(Mine *, NSURLResponse *))callback failBlock:(void (^)(NSString *, NSURLResponse *, NSError *))errorMessage{
     
-    return [self.requestManager getMineInfoWithSuceessBlock:^(NSDictionary *result, NSURLResponse *response) {
+    return [self.requestManager getMineInfoWithSuceessBlock:^(Mine *result, NSURLResponse *response) {
         if(callback){
-            callback(@{@"pwd":@"pwd",@"name":@"name"},response);
+            callback(result,response);
         }
     } failBlock:^(NSString *errorMessage, NSURLResponse *response, NSError *error) {
-        if(callback){
-            callback(@{@"pwd":@"pwd",@"name":@"name"},response);
-        }
+        NSLog(@"getMineInfoWithSuceessBlock requaet fail");
     }];
     
 }

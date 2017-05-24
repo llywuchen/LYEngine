@@ -23,19 +23,14 @@
     return _requestManager;
 }
 
-- (NSURLSessionDataTask *)getListWithSuceessBlock:(void (^)(NSArray *, NSURLResponse *))callback failBlock:(void (^)(NSString *, NSURLResponse *, NSError *))errorMessage{
+- (NSURLSessionDataTask *)getListWithCount:(NSInteger)count suceessBlock:(void (^)(NSArray<Mine *> *, NSURLResponse *))callback failBlock:(void (^)(NSString *, NSURLResponse *, NSError *))errorMessage{
     
-    return [self.requestManager getListWithSuceessBlock:^(NSArray *result, NSURLResponse *response) {
+    return [self.requestManager getListWithCount:count suceessBlock:^(NSArray<Mine *> *result, NSURLResponse *response) {
         if(callback){
-            int i;
-            NSMutableArray *a = [NSMutableArray array];
-            while (i <10) {
-                [a addObject:@{@"name":@"namei",@"nike":@"nicki"}];
-            }
-            callback(a,response);
+            callback(result,response);
         }
     } failBlock:^(NSString *errorMessage, NSURLResponse *response, NSError *error) {
-        callback(nil,response);
+        NSLog(@"getListWithCount requaet fail");
     }];
 }
 
