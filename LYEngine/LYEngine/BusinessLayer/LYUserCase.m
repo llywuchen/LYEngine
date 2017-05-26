@@ -35,9 +35,10 @@
 
 + (instancetype)instanceWithProtoco:(Protocol *)protocol{
     NSString *protocolStr = NSStringFromProtocol(protocol);
-    LYAssert([protocolStr hasSuffix:@"UserCaseProtocol"], @"UserCaseProtocol name invaid!!!");
-    Class userCaseCass = NSClassFromString([protocolStr substringWithRange:NSMakeRange(0, protocolStr.length-8)]);
-    LYAssert(userCaseCass!=NULL, @"userCaseCass no invalid!!!");
+    
+    LYAssert([protocolStr rangeOfString:@"UserCase"].length>0, @"UserCaseProtocol name invaid!!!");
+    Class userCaseCass = NSClassFromString([protocolStr substringWithRange:NSMakeRange(0, [protocolStr rangeOfString:@"UserCase"].location+8)]);
+    LYAssert(userCaseCass!=NULL, @"userCaseCass invalid!!!");
     LYModule *m = [self belongModuleWithUserCaseClass:userCaseCass];
     return [m obtainUserCase:userCaseCass];
 }
