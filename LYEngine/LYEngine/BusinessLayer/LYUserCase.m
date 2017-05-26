@@ -43,6 +43,10 @@
     return [m obtainUserCase:userCaseCass];
 }
 
+- (__kindof LYModule *)belongModule{
+    return [self.class belongModule];
+}
+
 - (void)open{
     if(isOpen) return;
     [self onOpen];

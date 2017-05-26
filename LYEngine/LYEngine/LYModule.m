@@ -168,4 +168,11 @@ static NSMutableDictionary *_moduleDic;
     }
 }
 
+- (NSBundle *)bundle{
+    if(!_bundle){
+        _bundle = [NSBundle bundleForClass:self.class];
+    }
+    return _bundle;
+}
+
 @end

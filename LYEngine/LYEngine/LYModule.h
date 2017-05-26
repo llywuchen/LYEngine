@@ -14,6 +14,7 @@
 @property (nonatomic,copy) NSString *APIHost;
 @property (nonatomic,copy) NSDictionary *APIPublicParams;
 @property (nonatomic,copy) NSString *H5Host;
+@property (nonatomic,copy) NSBundle *bundle;
 
 
 + (LYModule *)sharedInstance;

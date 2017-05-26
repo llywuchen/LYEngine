@@ -20,6 +20,7 @@
 @interface LYUserCase : NSObject//LYMessageHandle
 - (void)onOpen;
 - (void)onClose;
+- (__kindof LYModule *)belongModule;
 
 + (instancetype)instance;
 + (instancetype)instanceWithProtoco:(Protocol *)protocol;

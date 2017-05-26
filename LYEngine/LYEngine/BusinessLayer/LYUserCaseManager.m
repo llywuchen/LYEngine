@@ -32,12 +32,17 @@
     return intance;
 }
 
-+ (__kindof LYModule *)belongModuleWithUserCaseClass:(Class) userCaseClass{
++ (Class)belongModuleClassWithUserCaseClass:(Class) userCaseClass{
     NSString *userCaseKey = [NSString stringWithFormat:@"%p",userCaseClass];
     
     LYAssert([[self sharedInstance].userCaseToModuleDic objectForKey:userCaseKey], @"%@ has not registered",NSStringFromClass(userCaseClass));
     Class moduleClass = [[self sharedInstance].userCaseToModuleDic objectForKey:userCaseKey];
-    return [moduleClass sharedInstance];
+    return moduleClass;
+}
+
++ (__kindof LYModule *)belongModuleWithUserCaseClass:(Class) userCaseClass{
+    Class moduleClass = [self belongModuleClassWithUserCaseClass:userCaseClass];
+    return (LYModule *)[moduleClass instance];
 }
 
 - (instancetype)init{
@@ -55,7 +60,7 @@
     [_userCaseToModuleDic setObject:moduleClass forKey:userCaseKey];
 }
 
-- (__kindof LYUserCase *)obtainUserCase:(Class) userCaseClass belongModuleClass:(Class *)moduleClass{
+- (__kindof LYUserCase *)obtainUserCase:(Class) userCaseClass belongModuleClass:(Class )moduleClass{
     NSString *userCaseKey = [NSString stringWithFormat:@"%p",userCaseClass];
     LYAssert([_userCaseToModuleDic objectForKey:userCaseKey], @"%@ has not registered",NSStringFromClass(userCaseClass));
     NSString *modueKey = [NSString stringWithFormat:@"%p",moduleClass];
@@ -90,9 +95,9 @@
     NSString *userCaseKey = [NSString stringWithFormat:@"%p",userCaseClass];
     LYAssert([_userCaseToModuleDic objectForKey:userCaseKey], @"%@ has not registered",NSStringFromClass(userCaseClass));
     NSString *modueKey = [NSString stringWithFormat:@"%p",moduleClass];
-    LYWeakMutableArray *array = [userCaseRefDic objectForKey:modueKey];
+    NSMutableArray *array = [userCaseRefDic objectForKey:modueKey];
     
-    [array.allObjects enumerateObjectsUsingBlock:^(id<LYUserCaseDelegate>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [array enumerateObjectsUsingBlock:^(id<LYUserCaseDelegate>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if(obj&&[obj isKindOfClass:userCaseClass]){
             [obj close];
             *stop = YES;

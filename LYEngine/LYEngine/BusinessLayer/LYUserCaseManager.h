@@ -15,6 +15,8 @@
 
 + (LYUserCaseManager *)sharedInstance;
 
++ (Class)belongModuleClassWithUserCaseClass:(Class) userCaseClass;
+
 + (__kindof LYModule *)belongModuleWithUserCaseClass:(Class) userCaseClass;
 
 - (void)registerUserCase:(Class) userCaseClass belongModuleClass:(Class)moduleClass;
